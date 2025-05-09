@@ -36,7 +36,6 @@ export async function getServerSideProps() {
   try {
     const { data: movies } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/movies`);
     
-    // Filter trending movies (rating >= 8.5)
     const trendingMovies = movies.filter(movie => movie.rating >= 8.5);
     
     return {

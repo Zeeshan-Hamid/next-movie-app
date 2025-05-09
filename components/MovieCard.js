@@ -2,7 +2,6 @@ import Link from 'next/link';
 import styles from '../styles/MovieCard.module.css';
 
 const MovieCard = ({ movie }) => {
-  // Handle both MongoDB _id and string id
   const movieId = movie.id || movie._id;
   
   return (

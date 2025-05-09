@@ -10,13 +10,12 @@ const fetcher = async () => {
     const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
     const { data: directors } = await axios.get(`${baseUrl}/api/directors`);
     
-    // For each director, get their movies
     const directorsWithMovies = await Promise.all(directors.map(async (director) => {
       try {
         const directorId = director.id || director._id;
         const { data } = await axios.get(`${baseUrl}/api/directors/${directorId}`);
         
-        // The API returns { director, movies } structure
+       
         return {
           ...director,
           movies: data.movies || []

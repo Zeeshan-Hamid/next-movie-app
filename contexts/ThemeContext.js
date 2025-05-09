@@ -3,24 +3,21 @@ import { createContext, useContext, useState, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  // Check if we're on the client side before accessing localStorage
   const [darkMode, setDarkMode] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Initialize theme from localStorage on component mount
   useEffect(() => {
     try {
       const savedTheme = localStorage.getItem('darkMode');
       if (savedTheme !== null) {
         setDarkMode(JSON.parse(savedTheme));
       } else {
-        // Check user's system preference
+   
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         setDarkMode(prefersDark);
       }
     } catch (error) {
       console.error('Error loading theme from localStorage:', error);
-      // Fallback to system preference
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       setDarkMode(prefersDark);
     } finally {
@@ -28,7 +25,6 @@ export function ThemeProvider({ children }) {
     }
   }, []);
 
-  // Update document class and localStorage when theme changes
   useEffect(() => {
     if (!isLoaded) return;
     
