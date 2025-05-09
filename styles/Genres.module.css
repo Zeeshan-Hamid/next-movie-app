@@ -1,0 +1,68 @@
+.genreGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.genreCard {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  display: block;
+  text-decoration: none;
+}
+
+.genreCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+  border-color: var(--primary);
+}
+
+.genreCard::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.genreCard:hover::before {
+  opacity: 1;
+}
+
+.genreTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--foreground);
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.genreTitle::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background-color: var(--secondary);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.genreCard:hover .genreTitle::after {
+  opacity: 1;
+} 

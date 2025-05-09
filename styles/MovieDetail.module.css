@@ -1,0 +1,103 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--foreground);
+}
+
+.meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.tag {
+  background-color: var(--primary);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.descriptionBox {
+  background-color: var(--background);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-color);
+}
+
+.descriptionBox h3 {
+  margin-top: 0;
+  color: var(--foreground);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.descriptionBox p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.directorSection {
+  background-color: var(--background);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-color);
+}
+
+.directorSection h3 {
+  margin-top: 0;
+  color: var(--foreground);
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.directorName {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+}
+
+.buttonContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+    margin: 0 15px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+} 

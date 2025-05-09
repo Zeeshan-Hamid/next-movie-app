@@ -1,0 +1,154 @@
+.directorsLayout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.directorsListContainer {
+  height: 600px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+.directorCard {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.directorCard:last-child {
+  border-bottom: none;
+}
+
+.directorCardActive {
+  background-color: var(--primary);
+  color: white;
+}
+
+.directorCardInactive {
+  background-color: var(--card-bg);
+  color: var(--foreground);
+}
+
+.directorCardInactive:hover {
+  background-color: rgba(58, 134, 255, 0.1);
+}
+
+.directorName {
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+}
+
+.movieCount {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.directorDetailsContainer {
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.directorDetailCard {
+  padding: 25px;
+}
+
+.directorDetailName {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: var(--foreground);
+}
+
+.bioBox {
+  background-color: var(--background);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border: 1px solid var(--border-color);
+}
+
+.bioHeading {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: var(--foreground);
+}
+
+.bioText {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.moviesHeading {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: var(--foreground);
+}
+
+.moviesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.movieItem {
+  margin-bottom: 10px;
+}
+
+.movieItem:last-child {
+  margin-bottom: 0;
+}
+
+.movieLink {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  background-color: var(--background);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--foreground);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.movieLink:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.placeholderBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 30px;
+}
+
+.placeholderText {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .directorsLayout {
+    flex-direction: column;
+  }
+  
+  .directorsListContainer,
+  .directorDetailsContainer {
+    width: 100%;
+  }
+} 
